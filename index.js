@@ -5,7 +5,8 @@ const generate = async () => {
   const visitorData = await fetchVisitorData()
   const task = await createTask(visitorData)
   const { poToken } = await task.start()
-  return { visitorData, poToken }
+  result = JSON.stringify({"visitorData":visitorData, "poToken":poToken});
+  return result
 }
 
 module.exports = { generate }
